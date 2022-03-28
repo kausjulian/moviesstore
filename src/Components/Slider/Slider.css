@@ -1,0 +1,45 @@
+body{
+    background-color: black!important;
+}
+.imgcontainer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end
+    
+}
+.img{
+    width: 100%!important;
+    height: 20rem;
+    /* filter: blur(3px)!important; */
+    opacity: 100%;
+    filter: brightness(60%);
+    
+}
+
+h1{
+    position: absolute;
+    color: greenyellow;
+    font-size: 3rem!important;
+    font-weight: 400!important;
+}
+.boton{
+    position: absolute;
+    color: black!important;
+    background-color: greenyellow!important;
+    transition:all 0.7s ease!important;
+    border-radius: 4vh!important;
+    width: 18%!important;
+    
+}
+.boton:hover{
+    width: 20%!important;
+    transform:scale(1.05)!important;
+    color: red!important;
+    font-weight: 500!important;
+}
+
+.icons{
+    display: flex;
+    justify-content: flex-end!important;
+}

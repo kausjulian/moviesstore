@@ -1,0 +1,24 @@
+.header{
+background-color:#1C1427;
+}
+.botonnav{
+    background-color: greenyellow!important;
+}
+
+a{
+    color:greenyellow!important;
+    font-size: 1.2rem;
+    font-weight: 400!important;
+    transition:all 1s ease!important;
+}
+a:hover{
+    color:red !important;;
+    /* transform:scale(1.10)!important; */
+   
+
+}
+
+.icons{
+    color:greenyellow;
+    
+}
