@@ -1,0 +1,30 @@
+.card{
+    display: flex;
+    width: 18rem!important;
+    background-color:black!important;
+    color:greenyellow;
+    /* border-color: greenyellow!important; */
+    border-style: solid!important;
+    border-radius: 4%!important;
+}
+.imgcard{
+    /* width: 100%!important; */
+    height:13rem!important;
+    border-radius: 4%!important;
+
+
+}
+
+.botoncard{
+    color: black!important;
+    background-color: greenyellow!important;
+    transition:all 0.2s ease!important;
+    border-radius: 4vh!important;
+    border-style: none!important;
+
+}
+.botoncard:hover{
+    transform:scale(1.05)!important;
+    color: red!important;
+    font-weight: 500!important;
+}

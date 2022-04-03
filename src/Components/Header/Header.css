@@ -9,7 +9,7 @@ a{
     color:greenyellow!important;
     font-size: 1.2rem;
     font-weight: 400!important;
-    transition:all 1s ease!important;
+    transition:all 0.7s ease!important;
 }
 a:hover{
     color:red !important;;
@@ -18,7 +18,11 @@ a:hover{
 
 }
 
-.icons{
+.icon{
     color:greenyellow;
+    transition:all 0.7s ease!important;
     
+}
+.icon:hover{
+    color:red !important;;
 }

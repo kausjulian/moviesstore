@@ -1,33 +1,36 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios';
 import Card from '../Card/Card';
+import { MoviesContext} from '../../store/MoviesContext';
+
 
 const Landpage = () => {
-  const[data, setData] = useState([])
-  
-    const getData = async()=>{
-      const res = await axios.get('	https://api.opensea.io/api/v1/assets?format=json')
-    
-    //   console.log(res.data.assets)
-      setData(res.data.assets)
+
+  const {getTop,getLatest,top,latest} = useContext(MoviesContext)
      
 
-  }
-  console.log(data)
   useEffect(() => {
-    getData()
-  
+    getTop()
+    getLatest()
+    
     
   }, [])
 
 
+  console.log(top)
 
 
 
   return (
     
-    <div>
-       <img src={require('../../img/candado.png')} className='img' alt='' />
+    <div className='d-flex justify-content-center'>
+       <div className=''></div>
+       {/* // {data.map(d=>(
+    <Card {...d} />
+))} */}
+
+
+
     </div>
   )
 }

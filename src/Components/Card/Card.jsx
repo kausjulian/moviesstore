@@ -1,14 +1,18 @@
-// import React from 'react'
+import React from 'react'
+import './Card.css'
 
-// const Card = ({id,image_preview_url,description}) => {
+const Card = ({asset_contract:{name,description},collection:{image_url}}) => {
   
-//   // console.log(image_preview_url)
-// return (
+  // console.log(image_preview_url)
+return (
    
-//    <div>
-//         <img src={image_preview_url} />
-//     </div>
-//   )
-// }
+   <div className='d-flex '>
+        {/* <h1>{name}</h1> */}
+        <img src={image_url} />
+        <p>{description}</p>
+       
+    </div>
+  )
+}
 
-// export default Card
+export default Card
