@@ -1,0 +1,17 @@
+.formstyle{
+    background-color: black!important;
+    border-style: none!important;
+}
+
+
+.submitbuton{
+    background-color: greenyellow!important;
+    color: black!important;
+    transition:all 0.7s ease!important;
+    border-radius: 4vh!important;
+}
+.submitbuton:hover{
+    transform:scale(1.05)!important;
+    color: red!important;
+    font-weight: 500!important;
+}

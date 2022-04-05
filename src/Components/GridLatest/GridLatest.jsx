@@ -5,7 +5,7 @@ import GridCard from './GridCard'
 
 const Grid = () => {
   
-const {getLatest,data: latest,setLatest} = useContext(MoviesContext)
+const {getLatest,latest,setLatest} = useContext(MoviesContext)
      
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const {getLatest,data: latest,setLatest} = useContext(MoviesContext)
     
     
   }, [])
-console.log(latest)
+
   
   return (
     <>  

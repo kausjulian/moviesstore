@@ -6,50 +6,52 @@ export const MoviesContext = createContext(null)
 
 const MoviesProvider = ({children}) =>{
     //estado con datos completos
-    const[data, setLatest] = useState([])
+    const[latest, setLatest] = useState([])
     const[top,setTop] = useState([])
     const[detail,setDetail] = useState([])
+    const [all, setAll] = useState([])
 
-// peticion de la API
+//peticion all movies
+const getAll = async()=>{
+  const res = await axios.get('https://api.themoviedb.org/3/movie/now_playing?api_key=187c14bac41dd1ecc5b6d97678c71d29&language=en-US&page=6,7,8')
+  setAll(...all,res.data.results)
+}
+
+// peticion de la API latest
     const getLatest = async()=>{
       const res = await axios.get('https://api.themoviedb.org/3/movie/now_playing?api_key=187c14bac41dd1ecc5b6d97678c71d29&language=en-US&page=1')
-    
-    //   console.log(res.data)
       setLatest(res.data.results)
-     }
-
-     ///peticion de la api 2
-
-     const getTop = async () => {
+    }
+    ///peticion de la api 2
+    const getTop = async () => {
       const res = await axios.get(
-        "https://api.themoviedb.org/3/movie/top_rated?api_key=187c14bac41dd1ecc5b6d97678c71d29&language=es-US&"
+        "https://api.themoviedb.org/3/movie/top_rated?api_key=187c14bac41dd1ecc5b6d97678c71d29&language=en-US&"
       );
-      console.log(res.data.results)
       setTop(res.data.results)
     };
-
+    
     //peticion 3 (moviedetails)
-
     const getDetail = async (id) => {
       const res = await axios.get(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=187c14bac41dd1ecc5b6d97678c71d29&language=es-ES`
+        `https://api.themoviedb.org/3/movie/${id}?api_key=187c14bac41dd1ecc5b6d97678c71d29&language=en-EN`
       );
       setDetail(res.data);
     };
 
-  
-    // useEffect(() => {
-    //   getTop();
-    // }, []);
+   //userslist
 
-    
+   const [users, setUsers] = useState([{
+     name:'',
+     lastname:'',
+     email:'',
+     password:''
+   }])
 
-  
-  
 
 
-  return(
-        <MoviesContext.Provider  value={{getLatest,setLatest,getTop,setTop,top,getDetail,setDetail,detail}} >
+    return(
+        <MoviesContext.Provider  
+        value={{getLatest,latest,setLatest,getTop,setTop,top,getDetail,setDetail,detail,all,getAll,users,setUsers}} >
             {children}
         </MoviesContext.Provider>
 

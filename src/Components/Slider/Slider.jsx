@@ -11,7 +11,7 @@ const Slider = () => {
          {/* </div> */}
          {/* <div className='col-6'> */}
          <h1 className='text-center'>Movies Store</h1>
-         <button type="button" className="btn btn-outline-success boton  align-self-end mb-3">Enter</button>
+         <button type="button" className="btn btn-outline-success boton  align-self-end mb-3 shadow-lg">Enter</button>
          
          {/* </div> */}
          </div>

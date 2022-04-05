@@ -5,7 +5,8 @@ body{
     position: relative;
     display: flex;
     justify-content: center;
-    align-items:flex-end
+    align-items:flex-end;
+    /* padding-top: 5.4%; */
     
 }
 .img{
