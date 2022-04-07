@@ -6,6 +6,8 @@
     /* border-color: greenyellow!important; */
     border-style: solid!important;
     border-radius: 4%!important;
+
+    
 }
 .imgcard{
     /* width: 100%!important; */
@@ -28,6 +30,9 @@
     color: red!important;
     font-weight: 500!important;
 }
-i{
-    color: greenyellow!important;
+.download{
+    transition:all 0.5s ease!important;
+}
+.download:hover{
+    color:red
 }

@@ -8,17 +8,19 @@ body{
     align-items:flex-end;
     /* padding-top: 5.4%; */
     
+    
 }
 .img{
     width: 100%!important;
-    height: 20rem;
+    height: 25rem;
     /* filter: blur(3px)!important; */
     opacity: 100%;
     filter: brightness(50%);
+    padding-top: 1%;
     
 }
 
-h1{
+.slidertitle{
     position: absolute;
     color: greenyellow;
     font-size: 3rem!important;

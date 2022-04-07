@@ -1,9 +1,16 @@
 .header{
-/* background-color:#1C1427; */
+
+background-color:black;
 border: 0.2vh;
 border-color: greenyellow;
 border-style: solid;
 border-radius: 1.3vh;
+position: fixed!important;
+z-index: 1;
+width: 100%!important;
+opacity: 85%;
+filter: contrast(130%)!important;
+filter: brightness(110%)!important;
 
 }
 .headertitle{
@@ -31,9 +38,13 @@ a:hover{
 
 .icon{
     color:greenyellow;
-    transition:all 0.7s ease!important;
+    transition:all 0.5s ease!important;
     
 }
 .icon:hover{
     color:red !important;;
+}
+.icons{
+    display: flex;
+    align-items: center!important;
 }

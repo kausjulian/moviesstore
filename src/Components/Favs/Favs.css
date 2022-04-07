@@ -1,0 +1,21 @@
+.nomovies{
+    color: greenyellow;
+    font-weight: 400!important;
+    margin-top: 35%!important;
+}
+.botonfavs{
+    background-color: greenyellow!important;
+    color:black!important;
+    transition:all 0.2s ease!important;
+    border-radius: 4vh!important;
+    border-style: none!important;
+    width: 18%!important;
+
+
+}
+.botonfavs:hover{
+    transform:scale(1.05)!important;
+    color: red!important;
+    font-weight: 500!important;
+    
+}

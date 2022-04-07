@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import toast from 'react-hot-toast';
 
 
 export const MoviesContext = createContext(null)
@@ -10,6 +11,7 @@ const MoviesProvider = ({children}) =>{
     const[top,setTop] = useState([])
     const[detail,setDetail] = useState([])
     const [all, setAll] = useState([])
+    const [favs, setFavs] = useState(JSON.parse(localStorage.getItem('favoritos')) ?? [])
 
 //peticion all movies
 const getAll = async()=>{
@@ -44,14 +46,60 @@ const getAll = async()=>{
      name:'',
      lastname:'',
      email:'',
-     password:''
+     password:'',
+     password2:''
    }])
+
+   ///agregar a favs
+
+   const addFav = (movie)=>{
+    const already = favs.find(fav=>fav.id===movie.id)
+    if(already) return   toast.error(`${movie.title} is already in your favorites`,
+    {
+        style: {
+        borderRadius: '10px',
+        background: '#333',
+        color: '#fff',
+      },
+    }
+  );
+    setFavs([...favs,movie])
+    toast.success(`${movie.title} was added to your favorites!`,
+  {
+      style: {
+      borderRadius: '10px',
+      background: '#333',
+      color: '#fff',
+    },
+  }
+);
+   }
+
+   useEffect(() => {
+    localStorage.setItem('favoritos', JSON.stringify(favs))
+  },[favs])
+
+  //borrar favoritos
+
+  const delFav= (id) =>{
+    setFavs(favs.filter(fav=>(fav.id!=id)))
+    toast.success(`Deleted from your favorites!`,
+    {
+      style: {
+        borderRadius: '10px',
+        background: '#333',
+        color: '#fff',
+      },
+    }
+  );
+    
+  }
 
 
 
     return(
         <MoviesContext.Provider  
-        value={{getLatest,latest,setLatest,getTop,setTop,top,getDetail,setDetail,detail,all,getAll,users,setUsers}} >
+        value={{getLatest,latest,setLatest,getTop,setTop,top,getDetail,setDetail,detail,all,getAll,users,setUsers,addFav,favs,setFavs,delFav}} >
             {children}
         </MoviesContext.Provider>
 

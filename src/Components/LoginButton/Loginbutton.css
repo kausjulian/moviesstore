@@ -1,16 +1,11 @@
-.loginstyle{
-    padding-top: 20%!important;
-}
-
-
-.loginbuton{
+.loginbuton2{
     background-color: greenyellow!important;
     color: black!important;
     transition:all 0.7s ease!important;
     border-radius: 4vh!important;
     width: 18%!important;
 }
-.loginbuton:hover{
+.loginbuton2:hover{
     transform:scale(1.05)!important;
     color: red!important;
     font-weight: 500!important;

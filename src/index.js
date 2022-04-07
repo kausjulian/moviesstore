@@ -5,10 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
+import {Auth0Provider} from '@auth0/auth0-react'
 
 ReactDOM.render(
+  
   <React.StrictMode>
+    <Auth0Provider domain='moviesstore.us.auth0.com' clientId='oEm0x3ISYjWFaB7wr07mk0P72BxaeltI' redirectUri={window.location.origin}>
     <App />
+    </Auth0Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
