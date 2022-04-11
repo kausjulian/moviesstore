@@ -22,7 +22,7 @@ const GridTop = () => {
         </div>  :
         <div className='row d-flex justify-content-evenly pt-5'>
             <input className="form-control w-25 mt-5 bg-black search" onChange={handleSearch} type="text" placeholder="Search" aria-label="default input example"/>
-              <h3 className='m-5'>Latest</h3>
+              <h3 className='m-5'>Top Rated</h3>
               {top.filter(t=>{
                 if(search==''){
                 return top
@@ -30,10 +30,8 @@ const GridTop = () => {
               else if (t.title.toLowerCase().includes(search.toLowerCase())){
                 return t
               }
-              
-              
-              }).map(d=>(
-                <Card2 key={d.id} d={d} {...d} />
+              }).map(t=>(
+                <Card2 key={t.id} t={t} {...t} />
 
               ))}
         </div>

@@ -114,14 +114,25 @@ const MoviesProvider = ({children}) =>{
 
   const handleSearch = (e)=>{
     setSearch(e.target.value)
-    console.log(search)
   }
+//download alert
 
+const handleDownload = ()=>{
+  toast.success(`Please Checkout your inbox and follow steps to download`,
+  {
+      style: {
+      borderRadius: '10px',
+      background: '#333',
+      color: '#fff',
+    },
+  }
+);
+}
 
 
     return(
         <MoviesContext.Provider  
-        value={{getLatest,latest,setLatest,getTop,setTop,top,getDetail,setDetail,detail,users,setUsers,addFav,favs,setFavs,delFav,setSearch,search,handleSearch}} >
+        value={{getLatest,latest,setLatest,getTop,setTop,top,getDetail,setDetail,detail,users,setUsers,addFav,favs,setFavs,delFav,setSearch,search,handleSearch,handleDownload}} >
             {children}
         </MoviesContext.Provider>
 
