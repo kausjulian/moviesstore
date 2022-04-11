@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { MoviesContext } from '../../../store/MoviesContext'
+import './Card.css'
 
 const Card2 = ({poster_path,title,overview,release_date,popularity,backdrop_path,id,t}) => {
 
@@ -15,7 +16,7 @@ const Card2 = ({poster_path,title,overview,release_date,popularity,backdrop_path
   
   return (
 
-    <div className="card shadow-lg m-2 mt-3" >
+    <div className="card shadow-lg m-2 mt-3 animate__animated animate__flipInX" >
       <img src={`https://image.tmdb.org/t/p/w300/${backdrop_path}`} className="card-img-top mt-1  imgcard" alt="Ups, No Image."/>
         <div className="card-body">
           <h5 className="card-title">{title}</h5>

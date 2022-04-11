@@ -7,6 +7,8 @@ const GridCard = ({poster_path,title,overview,release_date,popularity,id,d}) => 
  
   const {addFav,favs,delFav} = useContext(MoviesContext)
 
+
+
  
 
    

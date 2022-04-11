@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import toast from 'react-hot-toast';
+import {useAuth0} from '@auth0/auth0-react'
 
 
 export const MoviesContext = createContext(null)
@@ -10,14 +11,17 @@ const MoviesProvider = ({children}) =>{
     const[latest, setLatest] = useState([])
     const[top,setTop] = useState([])
     const[detail,setDetail] = useState([])
-    const [all, setAll] = useState([])
+    // const [all, setAll] = useState('')
     const [favs, setFavs] = useState(JSON.parse(localStorage.getItem('favoritos')) ?? [])
+    const [search, setSearch] = useState('')
+    const{isAuthenticated} = useAuth0();
+    
 
-//peticion all movies
-const getAll = async()=>{
-  const res = await axios.get('https://api.themoviedb.org/3/movie/now_playing?api_key=187c14bac41dd1ecc5b6d97678c71d29&language=en-US&page=6,7,8')
-  setAll(...all,res.data.results)
-}
+// peticion all movies
+// const getAll = async()=>{
+//   const res = await axios.get('https://api.themoviedb.org/3/movie/now_playing?api_key=187c14bac41dd1ecc5b6d97678c71d29&language=en-US&page=6,7,8')
+//   setAll([...all,res.data.results])
+// }
 
 // peticion de la API latest
     const getLatest = async()=>{
@@ -53,7 +57,18 @@ const getAll = async()=>{
    ///agregar a favs
 
    const addFav = (movie)=>{
+    
     const already = favs.find(fav=>fav.id===movie.id)
+    if(isAuthenticated==false) return   toast.error(`You must Login First`,
+    {
+        style: {
+        borderRadius: '10px',
+        background: '#333',
+        color: '#fff',
+      },
+    }
+  );
+    
     if(already) return   toast.error(`${movie.title} is already in your favorites`,
     {
         style: {
@@ -95,11 +110,18 @@ const getAll = async()=>{
     
   }
 
+  //search engine
+
+  const handleSearch = (e)=>{
+    setSearch(e.target.value)
+    console.log(search)
+  }
+
 
 
     return(
         <MoviesContext.Provider  
-        value={{getLatest,latest,setLatest,getTop,setTop,top,getDetail,setDetail,detail,all,getAll,users,setUsers,addFav,favs,setFavs,delFav}} >
+        value={{getLatest,latest,setLatest,getTop,setTop,top,getDetail,setDetail,detail,users,setUsers,addFav,favs,setFavs,delFav,setSearch,search,handleSearch}} >
             {children}
         </MoviesContext.Provider>
 

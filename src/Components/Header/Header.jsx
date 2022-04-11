@@ -16,7 +16,7 @@ const Header = () => {
     
 return (
         <>
-            <nav className=" row navbar navbar-expand-lg navbar-light header shadow-lg">
+            <nav className=" row navbar navbar-expand-lg navbar-light header ">
                 <div className="container-fluid">
                     <button className="navbar-toggler botonnav" onClick={handleClick} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -29,7 +29,7 @@ return (
                         {/* <Link className="nav-link" to="/All">All Movies</Link> */}
                         <Link className="nav-link" to="/Latest">Latest</Link>
                         <Link className="nav-link" to="/Top">Top Rated</Link>
-                        <Link className="nav-link" to="/Favs">Favorites</Link>
+                        {/* <Link className="nav-link" to="/Favs">Favorites</Link> */}
                             <div className={click === true ? 'icons': 'd-none'}>
                             <Link  to="/Profile"> <svg xmlns="http://www.w3.org/2000/svg"  width="16" height="16" fill="currentColor" className="bi bi-person-circle icon ms-2" viewBox="0 0 16 16">
                                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>

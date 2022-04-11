@@ -11,7 +11,8 @@ width: 100%!important;
 opacity: 85%;
 filter: contrast(130%)!important;
 filter: brightness(110%)!important;
-
+/* box-shadow: 1px 2px 2px 1px greenyellow */
+box-shadow: 5px 2px 13px greenyellow;
 }
 .headertitle{
     font-size:1.3rem!important ;

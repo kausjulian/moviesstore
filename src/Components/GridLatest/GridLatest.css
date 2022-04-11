@@ -10,3 +10,12 @@ h3{
 .menu1{
     max-width: 200px!important
 }
+.search{
+    color: greenyellow!important;
+    border-radius: 10rem!important;
+    border-color: greenyellow!important;
+    /* position: fixed!important;
+    z-index: 1; */
+
+    
+}

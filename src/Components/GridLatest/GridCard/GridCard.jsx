@@ -16,7 +16,7 @@ const GridCard = ({poster_path,title,overview,release_date,popularity,id,d}) => 
   return (
         
         <>
-        <div className="card shadow-lg m-2 mt-3" >
+        <div className="card  m-2 mt-3 animate__animated animate__lightSpeedInLeft" >
   <img src={`https://image.tmdb.org/t/p/w300/${poster_path}`} className="card-img-top mt-1  imgcard" alt="Ups, No Image."/>
   <div className="card-body">
     <h5 className="card-title">{title}</h5>

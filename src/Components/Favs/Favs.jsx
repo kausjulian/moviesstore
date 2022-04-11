@@ -3,6 +3,7 @@ import { MoviesContext } from '../../store/MoviesContext'
 import './Favs.css'
 import FavsCard from './FavsCard'
 import {useAuth0} from '@auth0/auth0-react'
+import { Link } from 'react-router-dom'
 
 const Favs = () => {
   
@@ -11,8 +12,8 @@ const Favs = () => {
   
    if(isAuthenticated==false){
      return(
-        <div className='row d-flex justify-content-evenly pt-5'>
-          <h4 className='nomovies'>Please Login to see your favorites</h4>
+        <div className='row d-flex justify-content-evenly pt-2'>
+          <h4 className='nomovies'>Please <Link className='loginlink' to='/Profile'> Login</Link> to see your favorites</h4>
 
 
         </div>

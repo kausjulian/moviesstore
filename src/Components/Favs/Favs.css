@@ -1,7 +1,7 @@
 .nomovies{
     color: greenyellow;
     font-weight: 400!important;
-    margin-top: 35%!important;
+    margin-top: 25%!important;
 }
 .botonfavs{
     background-color: greenyellow!important;
@@ -18,4 +18,11 @@
     color: red!important;
     font-weight: 500!important;
     
+}
+
+.loginlink{
+    font-size: 3.5vh;
+}
+.loginlink:hover{
+    color:red
 }

@@ -6,14 +6,23 @@ import { ToastContainer } from 'react-toastify'
 
 const Grid = () => {
   
-const {getLatest,latest,setLatest} = useContext(MoviesContext)
+const {getLatest,latest,setLatest,search,setSearch,handleSearch} = useContext(MoviesContext)
      
+//handle search
+// useEffect(() => {
+//   handleSearch()
+  
+  
+// }, [search])
 
+///peticion api
   useEffect(() => {
     getLatest()
     
     
   }, [])
+
+  
 
   
   return (
@@ -23,11 +32,21 @@ const {getLatest,latest,setLatest} = useContext(MoviesContext)
           <span className="visually-hidden">Loading...</span>
         </div>  :
         <div className='row d-flex justify-content-evenly pt-5'>
+            <input className="form-control  mt-5 w-25 bg-black search" onChange={handleSearch} type="text" placeholder="Search" aria-label="default input example"/>
               <h3 className='m-5'>Latest</h3>
-              {latest.map(d=>(
-                      <GridCard key={d.id} d={d} {...d} />
-                      
-                  ))}
+              {latest.filter(l=>{
+                if(search==''){
+                return latest
+              }
+              else if (l.title.toLowerCase().includes(search.toLowerCase())){
+                return l
+              }
+              
+              
+              }).map(d=>(
+                <GridCard key={d.id} d={d} {...d} />
+
+              ))}
         </div>
       }
       </>            
@@ -35,3 +54,10 @@ const {getLatest,latest,setLatest} = useContext(MoviesContext)
 }
 
 export default Grid
+
+
+{/* <h3 className='m-5'>Latest</h3>
+{latest.map(d=>(
+        <GridCard key={d.id} d={d} {...d} />
+        
+    ))} */}

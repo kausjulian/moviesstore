@@ -5,19 +5,14 @@ body{
     position: relative;
     display: flex;
     justify-content: center;
-    align-items:flex-end;
-    /* padding-top: 5.4%; */
-    
-    
+    align-items:flex-end;   
 }
 .img{
     width: 100%!important;
     height: 25rem;
-    /* filter: blur(3px)!important; */
     opacity: 100%;
     filter: brightness(50%);
-    padding-top: 1%;
-    
+    padding-top: 1%; 
 }
 
 .slidertitle{

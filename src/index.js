@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import {Auth0Provider} from '@auth0/auth0-react'
+import 'animate.css';
 
 ReactDOM.render(
   
